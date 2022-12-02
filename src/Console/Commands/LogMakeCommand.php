@@ -114,7 +114,7 @@ class LogMakeCommand extends GeneratorCommand
       : 'AbstractLogConstructor';
 
     $usePath = $optionKey
-      ? $this->rootNamespace() . config('datalog.path') . '\\' . $optionKey
+      ? $this->rootNamespace() . config('logging.path') . '\\' . $optionKey
       : 'Tridmedia\Logging\Abstracts\AbstractLogConstructor';
 
     $replace = $this->buildParentReplacements($parentClassName, $usePath);
@@ -169,7 +169,7 @@ class LogMakeCommand extends GeneratorCommand
    */
   protected function getDefaultNamespace($rootNamespace)
   {
-    return $rootNamespace . '\\' . config('datalog.path');
+    return $rootNamespace . '\\' . config('logging.path');
   }
 
   protected function getArguments()

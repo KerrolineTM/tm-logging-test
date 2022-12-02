@@ -77,7 +77,7 @@ class LoggingSetupCommand extends GeneratorCommand
 
   protected function getDefaultNamespace($rootNamespace): string
   {
-    return $rootNamespace . '\\' . config('datalog.path');
+    return $rootNamespace . '\\' . config('logging.path');
   }
 
   protected function getStub()
