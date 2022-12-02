@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Logging;
+
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+
+use Tridmedia\Logging\Models\Log as BaseLog;
+
+class Log extends BaseLog
+{
+  public function loggables()
+  {
+    return $this->hasManyLoggables(Loggable::class);
+  }
+
+  public function log_event(): BelongsTo
+  {
+    return $this->belongsTo(LogEvent::class);
+  }
+
+  public function actor(): MorphTo
+  {
+    return $this->morphTo();
+  }
+}

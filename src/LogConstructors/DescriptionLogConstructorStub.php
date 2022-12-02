@@ -1,0 +1,55 @@
+<?php
+
+namespace Tridmedia\Logging\LogConstructors;
+
+# Этот класс должен создаваться в приложении пользователя 
+
+use Tridmedia\Logging\Abstracts\AbstractLogConstructor;
+use Tridmedia\Logging\Abstracts\Concerns;
+
+use App\Logging\Log;
+
+abstract class DescriptionLogConstructorStub extends AbstractLogConstructor
+{
+  use Concerns\HasDescription;
+  use Concerns\HasModelsInterpretations;
+
+  protected $type = 'description';
+
+
+
+  public function save(): Log
+  {
+    $log = new Log();
+    $log->type = $this->type;
+    $log->content = $this->description();
+    $log->details = $this->getSerializedDetails();
+    $log->actoragent = $this->getSerializedActoragent();
+    $log->log_event_id = $this->event;
+    $log->save();
+
+    if ($actor = $this->actor()) $log->actor()->associate($actor)->save();
+
+    $log->loggables()->attachMany($this->references);
+
+    return $log;
+  }
+
+
+
+  protected function details()
+  {
+    return array_merge(
+      $this->interpretDictionary($this->references),
+      ['Содержимое' => $this->description()]
+    );
+  }
+
+  protected function actoragent()
+  {
+    return $this->interpretModel(
+      $this->actor(),
+      $this->getQualifiedInterpretations()->whereGroup(['actor', 'actors'])
+    );
+  }
+}

@@ -1,0 +1,2 @@
+use Tridmedia\Logging\Entities\Interpretation;
+use Tridmedia\Logging\Entities\Interpretations;

@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Logging;
+
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+use Tridmedia\Logging\Models\Loggable as BaseLoggable;
+
+class Loggable extends BaseLoggable
+{
+  public function log(): BelongsTo
+  {
+    return $this->belongsTo(Log::class);
+  }
+}

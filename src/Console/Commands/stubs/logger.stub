@@ -1,0 +1,10 @@
+
+<?php
+
+namespace DummyNamespace;
+
+use Tridmedia\Logging\Abstracts\AbstractLogger;
+
+class DummyClass extends AbstractLogger
+{
+}

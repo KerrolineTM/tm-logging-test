@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Logging;
+
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+use App\Models\Module;
+
+use Tridmedia\Logging\Models\LogEvent as BaseLogEvent;
+
+class LogEvent extends BaseLogEvent
+{
+  public function logs(): HasMany
+  {
+    return $this->hasMany(Log::class);
+  }
+}

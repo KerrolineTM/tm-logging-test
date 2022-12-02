@@ -1,0 +1,16 @@
+protected function interpretations(): Interpretations
+  {
+    return new Interpretations(
+      Interpretation::of(Report::class)->as(['Отчет', 'Отчеты'])->query(['id', 'description'])->value('description'),
+      Interpretation::of(City::class)->as(['Город', 'Города'])
+        ->query(function ($q) {
+          $q->withTrashed()->select(['id', 'title', 'deleted_at']);
+        })
+        ->value(function ($o) {
+          $value = $o->title;
+          if ($o->deleted_at) $value .= ' (Удалено)';
+          return $value;
+        }),
+      Interpretation::of(Territory::class)->as(['Область', 'Области'])->query(['id', 'title'])->value('title'),
+    );
+  }

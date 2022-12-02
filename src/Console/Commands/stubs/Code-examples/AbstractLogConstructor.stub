@@ -1,0 +1,19 @@
+/**
+  * Уникальный идентификатор события по которому конструируется лог
+  * 
+  * @return null|int|string
+  */
+  public function getLogEventId()
+  {
+    return null;
+  }
+
+  /**
+    * Тип лога
+    * 
+    * @return null|string
+    */
+  public function getLogType()
+  {
+    return null;
+  }
