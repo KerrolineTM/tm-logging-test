@@ -1,7 +1,6 @@
 {
   "name": "tridmedia/logging-test",
   "type": "laravel-package",
-  "minimum-stability": "dev",
   "require": {
     "php": ">=7.0.0",
     "laravel/framework": "5.5.*"
