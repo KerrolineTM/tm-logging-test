@@ -1,5 +1,5 @@
 {
-  "name": "tridmedia/logging",
+  "name": "tridmedia/logging-test",
   "type": "laravel-package",
   "require": {
     "php": ">=7.0.0",
