@@ -1,5 +1,5 @@
 {
-  "name": "tridmedia/logging-test",
+  "name": "tridmedia/logging-test-gh",
   "type": "laravel-package",
   "minimum-stability": "dev",
   "require": {
