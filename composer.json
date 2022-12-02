@@ -1,3 +1,22 @@
 {
-  "minimum-stability": "dev"
+  "name": "tridmedia/logging-test",
+  "type": "laravel-package",
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.0.0",
+    "laravel/framework": "5.5.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tridmedia\\Logging\\" : "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+        "providers": [
+            "Tridmedia\\Logging\\LoggingServiceProvider"
+        ]
+    }
+  },
+  "license": "MIT"
 }
