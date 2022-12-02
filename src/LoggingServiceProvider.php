@@ -4,9 +4,9 @@ namespace Tridmedia\Logging;
 
 use Illuminate\Support\ServiceProvider;
 use Tridmedia\Logging\Console\Commands\{
-  DataLogSetupCommand,
   LogMakeCommand,
   LoggerMakeCommand,
+  LoggingSetupCommand,
 };
 
 class LoggingServiceProvider extends ServiceProvider
@@ -24,7 +24,7 @@ class LoggingServiceProvider extends ServiceProvider
       $this->commands([
         LogMakeCommand::class,
         LoggerMakeCommand::class,
-        DataLogSetupCommand::class,
+        LoggingSetupCommand::class,
       ]);
     }
   }
