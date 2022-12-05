@@ -1,5 +1,10 @@
 {
   "name": "tridmedia/logging-test",
+  "description": "Laravel artisan logs package.",
+  "keywords": [
+    "tridmedia",
+    "logging-test"
+  ],
   "type": "laravel-package",
   "require": {
     "php": ">=7.0.0",
@@ -7,7 +12,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Tridmedia\\Logging\\" : "src"
+      "Tridmedia\\Logging\\" : "src/"
     }
   },
   "extra": {
